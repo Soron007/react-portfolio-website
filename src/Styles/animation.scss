@@ -1,0 +1,12 @@
+
+@keyframes animateSvg{
+    to{
+        transform: translate(-50%, -10px);
+    }
+}
+
+@keyframes animateImg{
+    to{
+        transform: translate(2%, -15px);
+    }
+}
