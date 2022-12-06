@@ -5,7 +5,7 @@ const NavContent = () => (
         <h2>Souvik.</h2>
         <div>
             <a href="#home">Home</a>
-            <a href="#work">Work</a>
+            <a href="#projects">Projects</a>
             <a href="#timeline">Experience</a>
             <a href="#contact">Contact</a>
         </div>

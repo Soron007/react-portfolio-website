@@ -1,10 +1,20 @@
 import React from 'react'
-import { motion } from 'framer-motion';
+import { animate, motion } from 'framer-motion';
 import TypewriterComponent from 'typewriter-effect';
 import { BsArrowUpRight, BsChevronDoubleDown } from 'react-icons/bs'
 import mypic from '../Assets/mypic.jpg'
+import { useRef } from 'react';
 
 const Home = () => {
+
+    const projectCount = useRef(null);
+
+    const animationProjectsCount = () => {
+        animate(0, 10, {
+            duration: 1,
+            onUpdate: (v) => (projectCount.current.textContent = v.toFixed())
+        });
+    }
 
     const animation = {
         h1: {
@@ -46,6 +56,7 @@ const Home = () => {
                             strings: ["A Developer", "A Musician", "A Learner"],
                             autoStart: true,
                             loop: true,
+                            cursor: "",
                             wrapperClassName: "typewriterpara",
                         }}
 
@@ -62,7 +73,7 @@ const Home = () => {
                     <aside>
                         <article>
                             <p>
-                                +<span>10</span>
+                                +<motion.span whileInView={animationProjectsCount} ref={projectCount}></motion.span>
                             </p>
                             <span>Projects built</span>
                         </article>
